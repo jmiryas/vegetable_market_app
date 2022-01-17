@@ -88,6 +88,80 @@ class ShopScreen extends StatelessWidget {
                 }).toList(),
               ),
             ),
+            const SizedBox(
+              height: 25.0,
+            ),
+            SizedBox(
+              height: 200.0,
+              child: ListView(
+                scrollDirection: Axis.horizontal,
+                children: discountList.map((item) {
+                  return Container(
+                    width: 300.0,
+                    height: 200.0,
+                    padding: const EdgeInsets.all(20.0),
+                    margin: const EdgeInsets.only(right: 20.0),
+                    decoration: BoxDecoration(
+                      color: Colors.grey.shade200,
+                      borderRadius: BorderRadius.circular(10.0),
+                      image: DecorationImage(
+                        fit: BoxFit.cover,
+                        colorFilter: ColorFilter.mode(
+                          Colors.black.withOpacity(0.5),
+                          BlendMode.dstIn,
+                        ),
+                        image: AssetImage(item.background),
+                      ),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: Image(
+                            width: 100.0,
+                            height: 100.0,
+                            image: AssetImage(item.image),
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 15.0,
+                        ),
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                item.title,
+                                style: TextStyle(
+                                  fontSize: 20.0,
+                                  color: Colors.orange.shade600,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                item.discount,
+                                style: TextStyle(
+                                  fontSize: 55.0,
+                                  color: Colors.orange.shade600,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              Text(
+                                item.description,
+                                style: TextStyle(
+                                  color: Colors.green.shade600,
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                }).toList(),
+              ),
+            ),
           ],
         ),
       ),
