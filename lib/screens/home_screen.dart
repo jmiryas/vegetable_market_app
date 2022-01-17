@@ -15,7 +15,7 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int _currentIndex = 0;
-  PageController _pageController = PageController();
+  late PageController _pageController;
 
   @override
   void initState() {
@@ -48,11 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavyBar(
         selectedIndex: _currentIndex,
-        showElevation: true, // use this to remove appBar's elevation
+        showElevation: true,
         onItemSelected: (index) => setState(() {
           _currentIndex = index;
-          _pageController.animateToPage(index,
-              duration: const Duration(milliseconds: 300), curve: Curves.ease);
+          _pageController.animateToPage(
+            index,
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.ease,
+          );
         }),
         items: [
           BottomNavyBarItem(
