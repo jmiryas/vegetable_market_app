@@ -1,7 +1,7 @@
 name: vegetable_market_app
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
 
 version: 1.0.0+1
 
@@ -15,6 +15,7 @@ dependencies:
   provider: ^6.0.2
   cupertino_icons: ^1.0.2
   bottom_navy_bar: ^6.0.0
+  visibility_detector: ^0.2.2
 
 dev_dependencies:
   flutter_test:
@@ -22,9 +23,7 @@ dev_dependencies:
 
   flutter_lints: ^1.0.0
 
-
 flutter:
-
   uses-material-design: true
 
   assets:
@@ -42,4 +41,3 @@ flutter:
   #       - asset: fonts/TrajanPro.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
-
