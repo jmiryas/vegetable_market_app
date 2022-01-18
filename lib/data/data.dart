@@ -4,11 +4,81 @@ import '../models/discount_model.dart';
 import '../models/icon_category_model.dart';
 
 List<IconCategoryModel> iconCategoryList = [
-  IconCategoryModel(name: "Fruit", image: "images/orange.png"),
-  IconCategoryModel(name: "Greens", image: "images/broccoli.png"),
-  IconCategoryModel(name: "Staples", image: "images/potato.png"),
-  IconCategoryModel(name: "Fungi", image: "images/mushroom.png"),
-  IconCategoryModel(name: "Pepper", image: "images/bell-pepper.png"),
+  IconCategoryModel(
+    name: "Fruit",
+    image: "images/orange.png",
+    items: [
+      ItemModel(
+        title: "Acerola",
+        price: 5000,
+        image: "images/fruit_01.png",
+        weight: 0.5,
+      ),
+      ItemModel(
+        title: "Apple",
+        price: 8000,
+        image: "images/fruit_02.jpeg",
+        weight: 0.8,
+      ),
+      ItemModel(
+        title: "Apricots",
+        price: 7000,
+        image: "images/fruit_03.jpg",
+        weight: 1.0,
+      ),
+      ItemModel(
+        title: "Avocado",
+        price: 7000,
+        image: "images/fruit_04.jpg",
+        weight: 0.6,
+      ),
+    ],
+  ),
+  IconCategoryModel(
+    name: "Greens",
+    image: "images/broccoli.png",
+    items: [
+      ItemModel(
+        title: "Carrot",
+        price: 7000,
+        image: "images/greens_01.jpg",
+        weight: 0.6,
+      ),
+      ItemModel(
+        title: "Cabbage",
+        price: 7000,
+        image: "images/greens_02.jpg",
+        weight: 0.6,
+      ),
+      ItemModel(
+        title: "Broccoli",
+        price: 7000,
+        image: "images/greens_03.jpg",
+        weight: 0.6,
+      ),
+      ItemModel(
+        title: "Lettuce",
+        price: 7000,
+        image: "images/greens_04.jpg",
+        weight: 0.6,
+      ),
+    ],
+  ),
+  IconCategoryModel(
+    name: "Staples",
+    image: "images/potato.png",
+    items: [],
+  ),
+  IconCategoryModel(
+    name: "Fungi",
+    image: "images/mushroom.png",
+    items: [],
+  ),
+  IconCategoryModel(
+    name: "Pepper",
+    image: "images/bell-pepper.png",
+    items: [],
+  ),
 ];
 
 List<DiscountModel> discountList = [

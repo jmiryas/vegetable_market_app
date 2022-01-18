@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:visibility_detector/visibility_detector.dart';
 
 import '../data/data.dart';
+import '../screens/icon_category_details_screen.dart';
 
 class ShopScreen extends StatefulWidget {
   const ShopScreen({Key? key}) : super(key: key);
@@ -77,40 +78,51 @@ class _ShopScreenState extends State<ShopScreen> {
               child: ListView(
                 scrollDirection: Axis.horizontal,
                 children: iconCategoryList.map((item) {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Container(
-                        width: 65.0,
-                        height: 65.0,
-                        padding: const EdgeInsets.all(15.0),
-                        margin: const EdgeInsets.only(right: 20.0),
-                        child: Image(
-                          image: AssetImage(item.image),
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) =>
+                              IconCategoryDetailsScreen(iconCategory: item),
                         ),
-                        decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                      ),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      Expanded(
-                        child: SizedBox(
+                      );
+                    },
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
                           width: 65.0,
-                          height: 20.0,
-                          child: Center(
-                            child: Text(
-                              item.name,
-                              maxLines: 1,
-                              overflow: TextOverflow.ellipsis,
-                            ),
+                          height: 65.0,
+                          padding: const EdgeInsets.all(15.0),
+                          margin: const EdgeInsets.only(right: 20.0),
+                          child: Image(
+                            image: AssetImage(item.image),
+                          ),
+                          decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: BorderRadius.circular(10.0),
                           ),
                         ),
-                      )
-                    ],
+                        const SizedBox(
+                          height: 10.0,
+                        ),
+                        Expanded(
+                          child: SizedBox(
+                            width: 65.0,
+                            height: 20.0,
+                            child: Center(
+                              child: Text(
+                                item.name,
+                                maxLines: 1,
+                                overflow: TextOverflow.ellipsis,
+                              ),
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
                   );
                 }).toList(),
               ),
@@ -236,49 +248,45 @@ class _ShopScreenState extends State<ShopScreen> {
                                   ),
                                 )),
                           ),
-                          Expanded(
-                              child: Padding(
+                          Padding(
                             padding: const EdgeInsets.all(10.0),
-                            child: Expanded(
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                crossAxisAlignment: CrossAxisAlignment.end,
-                                children: [
-                                  Expanded(
-                                    child: Column(
-                                      mainAxisAlignment: MainAxisAlignment.end,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          item.value.title,
-                                          overflow: TextOverflow.ellipsis,
-                                          style: const TextStyle(
-                                            fontSize: 15.0,
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.end,
+                              children: [
+                                Expanded(
+                                  child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        item.value.title,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: const TextStyle(
+                                          fontSize: 15.0,
+                                          fontWeight: FontWeight.bold,
                                         ),
-                                        Text("Rp ${item.value.price}"),
-                                      ],
+                                      ),
+                                      Text("Rp ${item.value.price}"),
+                                    ],
+                                  ),
+                                ),
+                                CircleAvatar(
+                                  radius: 18.0,
+                                  backgroundColor: const Color(0xFF1bb880),
+                                  child: IconButton(
+                                    onPressed: () {},
+                                    icon: const Icon(
+                                      Icons.arrow_forward_ios,
+                                      size: 18.0,
+                                      color: Colors.white,
                                     ),
                                   ),
-                                  CircleAvatar(
-                                    radius: 18.0,
-                                    backgroundColor: const Color(0xFF1bb880),
-                                    child: IconButton(
-                                      onPressed: () {},
-                                      icon: const Icon(
-                                        Icons.arrow_forward_ios,
-                                        size: 18.0,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                  )
-                                ],
-                              ),
+                                )
+                              ],
                             ),
-                          ))
+                          )
                         ],
                       ),
                     ),
