@@ -1,3 +1,5 @@
+import 'package:vegetable_market_app/models/item_model.dart';
+
 import '../models/discount_model.dart';
 import '../models/icon_category_model.dart';
 
@@ -37,5 +39,38 @@ List<DiscountModel> discountList = [
     description: "Get discount until 17 June 2020",
     image: "images/gift.png",
     background: "images/bg4.jpg",
+  ),
+];
+
+List<ItemModel> saladList = [
+  ItemModel(
+    title: "Caesar Salad",
+    price: 30000,
+    image: "images/caesar-salad.jpg",
+  ),
+  ItemModel(
+    title: "Fattoush",
+    price: 340000,
+    image: "images/fattoush.jpg",
+  ),
+  ItemModel(
+    title: "Greek Salad",
+    price: 35000,
+    image: "images/greek-salad.jpeg",
+  ),
+  ItemModel(
+    title: "Leafy Green Salad",
+    price: 24000,
+    image: "images/leafy-green-salad.jpg",
+  ),
+  ItemModel(
+    title: "Nicoise Salad",
+    price: 27000,
+    image: "images/nicoise-salad.jpg",
+  ),
+  ItemModel(
+    title: "Tuna Salad",
+    price: 31000,
+    image: "images/tuna-salad.jpg",
   ),
 ];
