@@ -1,5 +1,4 @@
-import 'package:vegetable_market_app/models/item_model.dart';
-
+import '../models/item_model.dart';
 import '../models/discount_model.dart';
 import '../models/icon_category_model.dart';
 
